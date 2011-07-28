@@ -1,0 +1,22 @@
+JsonTpl is an Erlang library for building JSON Encoder/Decoder for Erlang by template.
+
+Using:
+1) add "prib/bintpl" dir to you project
+2) add "*.tpl" files to this dir.
+3) run "jsontpl:build(Project, FileName)." from Erlang console
+
+Template example (for example.tpl):
+
+{profile, [
+    {key,   atom,                  none},
+    {place, {tpl, example, point}, undefined},
+    {name,  string,                <<>>},
+    {list,  [string],              []},
+    {dict,  [{string, string}],    []}
+]}.
+
+{point, [
+    {x, <<"X">>, float,   0.0},
+    {y, <<"Y">>, integer, 2},
+    {z, <<"Z">>, bool,    false}
+]}.
